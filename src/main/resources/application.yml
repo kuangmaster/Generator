@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  redis:
+    host: XXX.XXX.XXX
+    port: 1234
+    # password:
+    timeout: 10s
+    lettuce:
+      pool:
+        max-active: 200
+        max-wait: -1ms
+        max-idle: 10
+        min-idle: 0
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:8080/数据库名称?useUnicode=true&characterEncoding=UTF-8&ServerTimezone=Asia/Shanghai
+    username: XXX
+    password: XXX
+    hikari:
+      pool-name: HikariPool
+      minimum-idle: 5
+      auto-commit: true
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
